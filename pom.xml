@@ -28,8 +28,7 @@
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
+    <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -72,16 +71,17 @@
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.5</version>
+          <version>0.8.2</version>
           <executions>
             <execution>
               <goals>
                 <goal>prepare-agent</goal>
               </goals>
             </execution>
+            <!-- attached to Maven test phase -->
             <execution>
               <id>report</id>
-              <phase>prepare-package</phase>
+              <phase>test</phase>
               <goals>
                 <goal>report</goal>
               </goals>
@@ -89,6 +89,5 @@
           </executions>
         </plugin>
       </plugins>
-    </pluginManagement>
   </build>
 </project>
